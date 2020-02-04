@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t enrica.alberti/docker_react -f Dockerfile.dev
+
+script:
+2   - docker run -e CI=true enrica.alberti/docker-react npm run test
+
